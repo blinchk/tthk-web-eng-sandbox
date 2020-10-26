@@ -44,14 +44,14 @@ body {
     background: var(--primary-color);
     margin: 30px;
     line-height: 1.4;
-    color: white;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .btn {
     background: var(--dark-color);
-    color: var(--primary-color);
+    color: white;
     padding: 0.6rem;
+    text-decoration: none;
 }
 
 img {
@@ -60,29 +60,92 @@ img {
 
 .container {
     display: grid;
-    grid: 20px;
+    gap: 20px;
 }
 
 .main-container {
     display: grid;
+    grid-template-areas:
+    "showcase showcase showcase top-box-a"
+    "showcase showcase showcase top-box-b";
+    gap: 20px;
+}
+
+.top-box {
+    background: var(--light-color);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.top-box .price {
+    font-size: 2.5rem;
+}
+
+.top-box-a {
+    grid-area: top-box-a;
+}
+
+.top-box-b {
+    grid-area: top-box-b;
+}
+
+.showcase {
+    min-height: 400px;
+    background: url('../img/paneel.png');
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    grid-area: showcase;
+}
+
+.showcase h1 {
+    font-size: 4rem;
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+}
+
+.showcase p {
+    background-color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
     body {
         margin: 0;
     }
+    nav a {
+        box-shadow: none;
+    }
+
     nav ul {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0;
+        gap: 5px;
+    }
+
+    .main-container {
+        grid-template-areas: 
+        "showcase"
+        "top-box-a"
+        "top-box-b";
     }
 }
 
 @media (max-width: 550px) {
-    body {
-        margin: 0;
-    }
     nav ul {
         grid-template-columns: 1fr;
-        gap: 0;
+    }
+    nav a {
+        font-size: 1rem;
+        padding: 0.3rem;
     }
 }
