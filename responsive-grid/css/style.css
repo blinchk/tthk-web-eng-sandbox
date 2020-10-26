@@ -1,6 +1,88 @@
 :root {
-    --primary-color: #48A9A6;
-    --dark-color: #4357AD;
-    --light-color: #E4DFDA;
+    --primary-color: #5941A9;
+    --dark-color: #1D1128;
+    --light-color: #E5D4ED;
     --shadow: 0 1px 5px rgb(36, 18, 15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    display: grid;
+    list-style: none;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+nav a {
+    display: block;
+    padding: 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.7em;
+    background: var(--light-color);
+    color: var(--dark-color);
+    text-transform: uppercase;
+    box-shadow: var(--shadow);
+}
+
+nav a:hover {
+    background: var(--dark-color);
+    color: var(--primary-color);
+    transform: translateY(-3px) scale(1.1);
+    transition-duration: 0.3s;
+}
+
+nav a:active {
+    transform: translateY(3px) scale(1);
+}
+
+body {
+    background: var(--primary-color);
+    margin: 30px;
+    line-height: 1.4;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btn {
+    background: var(--dark-color);
+    color: var(--primary-color);
+    padding: 0.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    display: grid;
+    grid: 20px;
+}
+
+.main-container {
+    display: grid;
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+    }
+    nav ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        margin: 0;
+    }
+    nav ul {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }
