@@ -12,6 +12,11 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
     gap: 10px;
     height: 100vh;
     color: white;
@@ -34,5 +39,29 @@ main {
 #sidebar {
     background: aqua;
     grid-area: sidebar;
+    padding: var(--main-padding);
+}
+
+#content1 {
+    background: slateblue;
+    grid-area: content1;
+    padding: var(--main-padding);
+}
+
+#content2 {
+    background: tomato;
+    grid-area: content2;
+    padding: var(--main-padding);
+}
+
+#content3 {
+    background: deeppink;
+    grid-area: content3;
+    padding: var(--main-padding);
+}
+
+footer {
+    background: dodgerblue;
+    grid-area: footer;
     padding: var(--main-padding);
 }
